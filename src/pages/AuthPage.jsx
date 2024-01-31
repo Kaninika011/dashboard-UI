@@ -14,7 +14,7 @@ const AuthPage = () => {
          
               <div className="form__container">
             
-                <div className ="animate__animated animate__bounce animate__delay-1s" id='text-main'>BASE</div>
+                <div className ="animate__animated animate__bounce animate__delay-1s" id='text-main'> <span className='text-main'>BASE </span></div>
                 <AuthScreen/>
             </div>
             <Socials/>

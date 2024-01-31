@@ -11,7 +11,7 @@ const AuthScreen = () => {
   
   return (
     <div className="formgroup__container">
-      <h1 className="">Sign in</h1>
+      <h1 className="sign-h1">Sign in</h1>
       <p className="sign_to_ur_acc">
         <strong>Sign in to your account</strong>
       </p>

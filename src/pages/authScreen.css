@@ -9,12 +9,6 @@
     padding: 3rem;
 }
 
-.logo {
-    font-size: var(--fs-l);
-    font-weight: 700;
-    font-family: var(--ff-poppins);
-    color: var(--color-white);
-}
 
 .form__container {
     width: 100%;
@@ -189,12 +183,23 @@ label {
 .form__footer a {
     color: var(--color-link);
 }
-
+.signin__btn{
+    background-color: #605BFF;
+ }
+ .sign-button:hover {
+     background-color: #483dff; 
+ }
 /* ============Media-Queries-For-Tablets============ */
 @media screen and (max-width: 880px) {
     .signin__page__container {
-        background: #F8FAFF;
+        background: white;
         padding: 1rem;
+    }
+    .sign-button {
+        background-color: #605BFF;
+    }
+    .sign-button:hover {
+        background-color: #483dff; 
     }
 
     .form__container {
@@ -209,21 +214,32 @@ label {
     }
 
     #text-main {
-        margin: unset;
+        margin-top:-4rem;
+        margin-left: 1rem;
+        background-color: #605BFF;
+        width:100%;
         
+    }
+    .text-main{
+       margin-left: 5rem;
+       font-size: 4rem;
     }
 
     .socials__wrapper {
-        margin-left: unset;
+        margin-left: 47rem;
         align-self: center;
         align-items: center;
         width:100%;
-        background-color: #333;
+        margin-top: -50rem;
+        background-color:white;
         padding: 10px;
     }
+    .socials__links li a {
+        color: #888; }
 
     .formgroup__container {
         width: 100%;
+        margin-left: 2px;
     }
 
     .signin__with__buttons {
@@ -244,7 +260,8 @@ label {
     }
 
     .form__footer {
-        color: var(--color-white);
+        color: black;
+        gap: 2px;
     }
 
     .btn__primary {
@@ -269,5 +286,67 @@ label {
         height: 18px;
         position: absolute;
         left: 10px;
+    }
+    .sign-h1{
+        text-align: center;
+    }
+    .sign_to_ur_acc{
+        text-align: center;
+    }
+    .siginin__google btn__primary{
+        margin-left: 1.5rem;
+    }
+    .form__wrapper{
+        margin-left: 1.5rem;
+    }
+}
+/* Media Query for Small Screens */
+@media screen and (max-width: 600px) {
+    .signin__page__container {
+        background: #f0f0f0; 
+        padding: 1rem;
+    }
+    #text-main {
+        margin-top:-4rem;
+        margin-left: -1rem;
+        background-color: #605BFF;
+        width: 42rem;
+        
+    }
+
+    .text-main{
+       margin-left: 6rem;
+       font-size: 3rem;
+    }
+
+    .socials__wrapper {
+        margin-left: 7rem;
+        align-self: center;
+        align-items: center;
+        width:100%;
+        margin-top: -50rem;
+        background-color: #f0f0f0;
+        padding: 10px;
+    }
+    .socials__links li a {
+        color: #888; 
+    }
+    .signin__btn{
+       background-color: #605BFF;
+    }
+    .sign-button:hover {
+        background-color: #483dff; 
+    }
+    .sign-h1{
+        text-align: center;
+    }
+    .sign_to_ur_acc{
+        text-align: center;
+    }
+    .siginin__google btn__primary{
+        margin-left: 1.5rem;
+    }
+    .form__wrapper{
+        margin-left: 1.5rem;
     }
 }
