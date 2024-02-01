@@ -1,7 +1,8 @@
 import "./App.css";
 import Dashboard from "./pages/Dashboard";
-import AuthPage from './pages/AuthPage';
+
 import { useAuth0 } from "@auth0/auth0-react";
+import AuthPage from './pages/Dashboard/Login/index';
 ;
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
   return (
     <main className="container">
       {isAuthenticated ? <Dashboard /> : <AuthPage />}
-    
+  
     </main>
   );
 }

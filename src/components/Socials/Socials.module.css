@@ -1,0 +1,40 @@
+.socials__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1.2rem;
+  }
+  
+  .socials__links {
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    gap: 3rem;
+  }
+  
+  .socials__links li a {
+    color: #888;
+    font-size: var(--fs-icons);
+    transition: color 0.3s ease;
+    &:hover {
+      color: #adb1e1; 
+  }
+  }
+  
+  @media screen and (min-width: 880px) {
+    .socials__wrapper {
+      display: flex;
+      width: 100%;
+      justify-content: flex-start;
+      align-items: flex-start;
+      border-radius: 1.2rem;
+      margin-left: 30rem;
+    }
+  
+    .socials__links li a {
+      color: var(--color-white);
+    }
+  }
+ 
+
+  

@@ -90,6 +90,9 @@ body{
     .sidebar__container .sidebar_text {
         display: none; 
     }
+    .trigger {
+        display: none;
+    }
 
     .nav__links {
         margin-top: 0; }
@@ -104,33 +107,12 @@ body{
         gap: 0; 
         font-size: 1rem; 
     }
+}
+@media screen and (max-width: 300px) {
+    .sidebar__container {
 
-    
-    .hamburger-menu {
-        display: flex;
-        flex-direction: column;
-        cursor: pointer;
-        z-index: 999; 
-    }
-
-    .hamburger-menu div {
-        width: 30px;
-        height: 3px;
-        background-color: #605BFF;
-        margin: 6px 0;
-        transition: 0.4s;
-    }
-
- 
-    .hamburger-menu.active div:nth-child(1) {
-        transform: rotate(-45deg) translate(-5px, 6px);
-    }
-
-    .hamburger-menu.active div:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger-menu.active div:nth-child(3) {
-        transform: rotate(45deg) translate(-5px, -6px);
-    }
+}
+.trigger{
+  display: block; 
+}
 }
