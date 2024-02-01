@@ -1,61 +1,80 @@
-import { RiPieChartLine, RiUpload2Line, RiFileTextLine, RiCalendarLine, RiNotification2Line, RiSettings3Line } from 'react-icons/ri';
+import {
+  RiPieChartLine,
+  RiUpload2Line,
+  RiFileTextLine,
+  RiCalendarLine,
+  RiNotification2Line,
+  RiSettings3Line,
+} from "react-icons/ri";
 import { useAuth0 } from "@auth0/auth0-react";
-import './Sidebar.css';
-import { useState } from 'react';
+import { useState } from "react";
 
-const SideBar = () => {
-  
-  const [isOpen, setIsOpen] = useState(false);
+import styles from "./Sidebar.module.css";
+
+import { GiHamburgerMenu } from "react-icons/gi";
+
+
+
+const SideBar = ({ setOpenSideBar, openSideBar }) => {
+  const [activeLinkIndex, setActiveLinkIndex] = useState(1); 
   const { logout } = useAuth0();
 
   const navLinks = [
-    { icon: <RiPieChartLine />, text: 'Dashboard' },
-    { icon: <RiUpload2Line />, text: 'Upload' },
-    { icon: <RiFileTextLine />, text: 'Invoice' },
-    { icon: <RiCalendarLine />, text: 'Calendar' },
-    { icon: <RiNotification2Line />, text: 'Notification' },
-    { icon: <RiSettings3Line />, text: 'Settings' },
+    { icon: <RiPieChartLine />, text: "Dashboard" },
+    { icon: <RiUpload2Line />, text: "Upload" },
+    { icon: <RiFileTextLine />, text: "Invoice" },
+    { icon: <RiCalendarLine />, text: "Calendar" },
+    { icon: <RiNotification2Line />, text: "Notification" },
+    { icon: <RiSettings3Line />, text: "Settings" },
   ];
 
-  const toggleMenu = () => {
-    setIsOpen((open) => !open);
+  const handleToggleMenu = () => {
+    setOpenSideBar((prev) => !prev);
+  };
+
+  const handleNavLinkClick = (index) => {
+    setActiveLinkIndex(index);
   };
 
   return (
-    <div className='sidebar'>
-      <div className='sidebar__container'>
-        <h1 className="sidebar_text">BASE</h1>
+    <div className={`${styles["sidebar"]} ${openSideBar ? styles["hide"] : null}`}>
+      <div className={styles["sidebar__container"]}>
+        <div className={styles["profile-logo-div"]}>
+          <GiHamburgerMenu onClick={handleToggleMenu} />
+          <h5>BASE</h5>
+        </div>
+        <div className={styles["profile-logo-div-2"]}>
+          <h5>BASE</h5>
+        </div>
 
-        <ul className="nav__links">
+        <ul className={styles["nav__links"]}>
           {navLinks.map((link, index) => (
-            <li key={index} className="nav__link">
+            <li
+              key={index}
+              className={`${styles["nav__link"]} ${index === 1 ? styles["active"] : ""}`}
+            >
               <a
                 href="http://"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={link.text === 'Upload' ? 'active' : ''}
+                onClick={() => handleNavLinkClick(index)}
               >
                 {link.icon}
                 {link.text}
               </a>
             </li>
           ))}
-          
         </ul>
 
-        <button className='signOut-btn' onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
+        <button
+          className={styles["signOut-btn"]}
+          onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}
+        >
           Log Out
         </button>
       </div>
-      <div >
-        <ul>
-        <li className='trigger'>
-          hi
-        </li>
-        </ul>
-      </div>
-      </div>
-);
-}
+    </div>
+  );
+};
 
 export default SideBar;

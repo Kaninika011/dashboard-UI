@@ -70,7 +70,8 @@
 
   .text-main {
     font-size: 3rem;
-    font-weight:300;
+    font-weight:500;
+    font:bolder;
    
   }
 }
@@ -105,5 +106,9 @@
   .text-main {
     text-align: center;
     margin-left:-20rem;
+    font-weight:500;
+    
+     
+    }
   }
-}
+
